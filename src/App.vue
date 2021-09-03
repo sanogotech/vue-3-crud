@@ -1,3 +1,5 @@
+
+
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -9,6 +11,14 @@
         <li class="nav-item">
           <router-link to="/add" class="nav-link">Add</router-link>
         </li>
+		<li class="nav-item">
+          <router-link to="/excel" class="nav-link">Excel</router-link>
+        </li>
+		
+		<li class="nav-item">
+          <router-link to="/datatable" class="nav-link">Datatable</router-link>
+        </li>
+		
       </div>
     </nav>
 
@@ -23,3 +33,5 @@ export default {
   name: "app"
 };
 </script>
+
+
