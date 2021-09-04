@@ -6,6 +6,47 @@ Build a Vue.js 3 CRUD example to consume REST APIs, display and modify data usin
 
 ![vue-3-crud-example-axios-tutorial](vue-3-crud-example-axios-tutorial.png)
 
+## Technology
+vue 3
+vue-router 4
+axios 0.21.1
+bootstrap 4
+
+## Docs Vuejs
+- https://www.bezkoder.com/vue-3-authentication-jwt/
+- https://www.bezkoder.com/vue-3-crud/
+- https://www.section.io/engineering-education/how-to-interact-with-an-api-from-a-vuejs-application/
+- https://www.npmjs.com/package/vue-json-excel
+- https://www.bezkoder.com/integrate-vue-spring-boot/
+- https://therichpost.com/vue-3-how-to-use-jquery-datatable-in-vuejs-application/
+- https://therichpost.com/vue-3-datatable-with-export-buttons-print-csv-copy-with-dynamic-data/
+
+
+## Vuejs Datatable full
+
+npm install -g @vue/cli
+
+vue create vuedatatable
+
+cd vuedatatable
+
+npm install datatables.net --save
+
+npm install datatables.net-dt --save
+
+npm install datatables.net-buttons --save
+
+npm install datatables.net-buttons-dt --save
+
+npm install @types/datatables.net-buttons --save-dev
+
+npm install jquery --save
+npm i bootstrap
+npm i axios
+
+npm run serve //http://localhost:8080/
+
+## Bezkoder
 For instruction, please visit:
 > [Vue 3 CRUD example with Axios & Vue Router](https://bezkoder.com/vue-3-crud/)
 

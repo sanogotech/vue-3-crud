@@ -25,26 +25,51 @@
 </template>
 
 <script>
+
 //Bootstrap and jQuery libraries
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; //for table good looks
 import 'jquery/dist/jquery.min.js';
 //Datatable Modules
 import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
+import "datatables.net-buttons/js/dataTables.buttons.js"
+import "datatables.net-buttons/js/buttons.colVis.js"
+import "datatables.net-buttons/js/buttons.flash.js"
+import "datatables.net-buttons/js/buttons.html5.js"
+import "datatables.net-buttons/js/buttons.print.js"
 import $ from 'jquery'; 
 
-
 import axios from 'axios';
+
 export default {
  
   mounted(){
     //API Call
     axios
     .get("https://www.testjsonapi.com/users/")
-    .then((res)=>
+    // .then((res)=>
+    // {
+      // this.users = res.data;
+      // $('#example').DataTable();
+    // })
+  // },
+  .then((res)=>
     {
       this.users = res.data;
-      $('#example').DataTable();
+      setTimeout(function(){
+      $('#example').DataTable(
+          {
+              pagingType: 'full_numbers',
+                pageLength: 5,
+                processing: true,
+                dom: 'Bfrtip',
+                    buttons: ['copy', 'csv', 'print'
+                    ]
+          }
+      );
+      },
+        1000
+        );
     })
   },
   data: function() {
@@ -55,28 +80,8 @@ export default {
 }
 </script>
 
-<script>
-	$(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-	} );
-</script>
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-
-<script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
 
 
 
